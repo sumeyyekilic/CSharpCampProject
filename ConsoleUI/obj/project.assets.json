@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sumeyye\\source\\repos\\MyFinalProject\\ConsoleUI\\ConsoleUI.csproj",
+      "projectUniqueName": "C:\\Users\\sumeyye\\source\\repos\\CSharpCampProject\\ConsoleUI\\ConsoleUI.csproj",
       "projectName": "ConsoleUI",
-      "projectPath": "C:\\Users\\sumeyye\\source\\repos\\MyFinalProject\\ConsoleUI\\ConsoleUI.csproj",
+      "projectPath": "C:\\Users\\sumeyye\\source\\repos\\CSharpCampProject\\ConsoleUI\\ConsoleUI.csproj",
       "packagesPath": "C:\\Users\\sumeyye\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sumeyye\\source\\repos\\MyFinalProject\\ConsoleUI\\obj\\",
+      "outputPath": "C:\\Users\\sumeyye\\source\\repos\\CSharpCampProject\\ConsoleUI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -185,11 +185,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sumeyye\\source\\repos\\MyFinalProject\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\sumeyye\\source\\repos\\CSharpCampProject\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "C:\\Users\\sumeyye\\source\\repos\\MyFinalProject\\DataAccess\\DataAccess.csproj",
+      "projectPath": "C:\\Users\\sumeyye\\source\\repos\\CSharpCampProject\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\sumeyye\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sumeyye\\source\\repos\\MyFinalProject\\DataAccess\\obj\\",
+      "outputPath": "C:\\Users\\sumeyye\\source\\repos\\CSharpCampProject\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
