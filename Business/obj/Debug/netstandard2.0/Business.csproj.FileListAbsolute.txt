@@ -1,0 +1,4 @@
+C:\Users\sumeyye\source\repos\CSharpCampProject\Business\obj\Debug\netstandard2.0\Business.csprojAssemblyReference.cache
+C:\Users\sumeyye\source\repos\CSharpCampProject\Business\obj\Debug\netstandard2.0\Business.csproj.CoreCompileInputs.cache
+C:\Users\sumeyye\source\repos\CSharpCampProject\Business\obj\Debug\netstandard2.0\Business.AssemblyInfoInputs.cache
+C:\Users\sumeyye\source\repos\CSharpCampProject\Business\obj\Debug\netstandard2.0\Business.AssemblyInfo.cs

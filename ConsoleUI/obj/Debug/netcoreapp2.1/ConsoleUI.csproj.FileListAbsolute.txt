@@ -1,0 +1,4 @@
+C:\Users\sumeyye\source\repos\CSharpCampProject\ConsoleUI\obj\Debug\netcoreapp2.1\ConsoleUI.csprojAssemblyReference.cache
+C:\Users\sumeyye\source\repos\CSharpCampProject\ConsoleUI\obj\Debug\netcoreapp2.1\ConsoleUI.csproj.CoreCompileInputs.cache
+C:\Users\sumeyye\source\repos\CSharpCampProject\ConsoleUI\obj\Debug\netcoreapp2.1\ConsoleUI.AssemblyInfoInputs.cache
+C:\Users\sumeyye\source\repos\CSharpCampProject\ConsoleUI\obj\Debug\netcoreapp2.1\ConsoleUI.AssemblyInfo.cs

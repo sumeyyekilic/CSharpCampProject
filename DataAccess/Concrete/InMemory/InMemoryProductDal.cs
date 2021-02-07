@@ -8,7 +8,7 @@ using System.Text;
 namespace DataAccess.Concrete.InMemory
 {
     //InMemoryProductDal : bellek üzerinde ürünle ilgili veri erişim kodlarını yazılacağı yer demek
-    class InMemoryProductDal : IProductDal  //IProduct dal eklendikten sonra ,"Implement Interface"i eklenir. Çünkü bellekte çalışırken yazdığım kodlar farklıdır, entity framework kulanırken yazacağın kodlar gerçek veritabanında farklıdır 
+    public class InMemoryProductDal : IProductDal  //IProduct dal eklendikten sonra ,"Implement Interface"i eklenir. Çünkü bellekte çalışırken yazdığım kodlar farklıdır, entity framework kulanırken yazacağın kodlar gerçek veritabanında farklıdır 
                                             //şuan bellekte çalışacak şekilde IProduct dalı kodlayacağım.
     {
         //içerisinde ürünleri barındıran değişken
