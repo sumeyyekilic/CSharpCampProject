@@ -7,6 +7,7 @@ using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
+    //NuGet
     public class EfProductDal : IProductDal
     {
         public void Add(Product entity)

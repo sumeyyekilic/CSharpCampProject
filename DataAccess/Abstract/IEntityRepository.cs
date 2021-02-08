@@ -5,6 +5,7 @@ using System.Text;
 
 namespace DataAccess.Abstract
 {
+    //IEntity : IEntity olabilir veya IEntity implemente eden bir nesne olabilir
     //generic repository desing pattern yapmak için eklendi
     public interface IEntityRepository<T>
     {

@@ -54,3 +54,31 @@ EntityFramework Klasörü oluşturuldu.(alternatif sistem)
 İçerisine ; 
 - `EfCategoryDal , EfProductDal` adında iki class oluşturuldu.  
 - bu classs'ların içerisi entity framewokre göre kodlanacak
+
+
+## EF
+
+Entity Framework , microsoftun bir ürünüdür. ORM dediğimiz bir ürüünüdr.
+ linq destekli çalışıyor.
+ - vt daki tabloyu sanki class'mış gibi onunla ilişkilendişrip, tüm operasyonarı yani sql'leri linq ile yaptığımız bir ortamdır.
+- `ORM`;  vt nesneleri arasında bir bağ kurup veritabanı işlerimi yapma sürecidir..
+
+#### Entity Framework siteme nasıl dahil edilir ? 
+- şimdiye kadar c# ın .net içerisindeki implamentasyonlarını kullandık.
+- ilerledikçe başkalarını yazdığı (paket) kodları kullanacağız.
+- bunların ortak koyulduğu ortam ise Nuget'dir.
+
+- Data ACCESS katmanı üzerinden sağ tıklayıp ; manage paket nuget deyip, Entity Framework eklendi. (Microsoft.EntityFrameworkCore.SqlServer)
+
+* - * * - * 
+ 1.  VT ile benim nesnelerimi ilişkilendirme adımı : bunu yapabilmek için context yapı kurmak gerekiyor. 
+*Context  demek DB tabloları ile proje classlarımızı ilişkilendirdiğimiz class'dır. 
+
+//db ismi :Northwind
+
+ - DataAccess Katmanı altındaki *EntityFramework* içerisine
+   NorthwindContext adında bir class oluşturdum. bunu da :DbContext 
+   baz-se sınıfından kalıtıyoruz. bizim context'imizin kendisidir.
+
+> //OnConfiguring : senin projen hangi vt ile ilişkili'yi belirteceğim
+> yer!!
