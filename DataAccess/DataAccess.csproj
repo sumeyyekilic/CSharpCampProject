@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Concrete\NewFolder\" />
+    <Folder Include="Concrete\EntityFramework\" />
   </ItemGroup>
 
 </Project>

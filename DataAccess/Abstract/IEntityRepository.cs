@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace DataAccess.Abstract
@@ -12,8 +13,8 @@ namespace DataAccess.Abstract
         //BUna T dersek :  IEntityRepository<T>   BU ŞEKİLDE YAPI OLUŞTURULUR!
 
         //aşağıdaki yapı diğer classlarda tekrarlanıyor. bu yuzden T ifadesi eklendi.
-        List<T> GetAll(); 
-          
+        List<T> GetAll(Expression<Func<T,bool>> filter=null); //eticaret uyg.daki filtreleme aslında.... 
+                                                             //(p=>p.CategoryId==2);
         void Add(T entity);  
         void Update(T entity);
         void Delete(T entity);

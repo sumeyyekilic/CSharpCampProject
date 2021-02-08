@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DataAccess.Abstract
 {
-    public interface IProductDal
+    public interface IProductDal :IEntityRepository<Product>  // buaraya :IEntityRepository<Product> eklenerek aşağıdaki kodları yazmadan hazırlamam ve erişemem sağlandı. 
     {
         //****AŞAĞIDAKİ KODLAR IEntityRepository.cs e taşınarak 
         //"Generic Repository Desing Pattern" OLUŞT. ADINA 

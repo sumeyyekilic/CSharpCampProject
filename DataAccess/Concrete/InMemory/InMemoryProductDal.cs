@@ -3,6 +3,7 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace DataAccess.Concrete.InMemory
@@ -78,5 +79,9 @@ namespace DataAccess.Concrete.InMemory
             //yukarıya && diyerek istediğim kadar yeni koşul ekleyebilrim. 
         }
 
+        public List<Product> GetAll(Expression<Func<Product, bool>> filter = null)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
