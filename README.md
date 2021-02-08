@@ -13,3 +13,5 @@ Kurumsal mimari ile gelişltireceğim proje  🎉
  - C# .net core
  -  Angular
 
+
+Proje ile ilgili aldığım not ve açıklamalarıma [şu dizinden](https://github.com/sumeyyekilic/CSharpCampProject/tree/master/MyNotes) ulaşabilirsiniz.
