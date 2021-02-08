@@ -47,3 +47,10 @@ IProductdal için yaptığımız çalışmayı , ICatogorydal için yaptım. Bur
 Sizde bu şekilde sistemi basit şekilde standartize edebilirsiniz.
 
 
+* - * - * 
+
+#### **Concrete üzerinde :**
+EntityFramework Klasörü oluşturuldu.(alternatif sistem)
+İçerisine ; 
+- `EfCategoryDal , EfProductDal` adında iki class oluşturuldu.  
+- bu classs'ların içerisi entity framewokre göre kodlanacak
