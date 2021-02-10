@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -25,12 +26,14 @@ namespace Business.Concrete
             _productDal = productDal;
         }
 
-        public void Add(Product product)
+        public IResult Add(Product product)
         {
             //business kodlar buraya yazılır.
             //ürünü eklemeden önce kodları buraya yazarız, eğer geçerlşiyse ürün eklernir.
             _productDal.Add(product);
 
+            return new Result(true,"");  //bu satırı eklemezsek Add kızar!
+            
             //Biz istekte bulunan kişiye yaptığı işlem sonucunda işlemin başarısız olduğu mesajı veya yaptığı işlemin başlarılı old yapıları burada oluşturacağız.
 
         }

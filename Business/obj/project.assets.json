@@ -1692,6 +1692,16 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.dll": {}
+        }
+      },
       "DataAccess/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -6143,6 +6153,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "Core/1.0.0": {
+      "type": "project",
+      "path": "../Core/Core.csproj",
+      "msbuildProject": "../Core/Core.csproj"
+    },
     "DataAccess/1.0.0": {
       "type": "project",
       "path": "../DataAccess/DataAccess.csproj",
@@ -6156,6 +6171,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "Core >= 1.0.0",
       "DataAccess >= 1.0.0",
       "Entities >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
@@ -6191,6 +6207,9 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
+            "C:\\Users\\sumeyye\\source\\repos\\CSharpCampProject\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\sumeyye\\source\\repos\\CSharpCampProject\\Core\\Core.csproj"
+            },
             "C:\\Users\\sumeyye\\source\\repos\\CSharpCampProject\\DataAccess\\DataAccess.csproj": {
               "projectPath": "C:\\Users\\sumeyye\\source\\repos\\CSharpCampProject\\DataAccess\\DataAccess.csproj"
             },
