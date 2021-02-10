@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -33,7 +34,7 @@ namespace Business.Concrete
 
             if (product.ProductName.Length < 2)
             {
-                return new ErrorResult("üürn ismi en az iki karakter olmalı");
+                return new ErrorResult(Messages.ProductNameInvalid);
             }
 
             _productDal.Add(product);
@@ -41,7 +42,8 @@ namespace Business.Concrete
             //return new Result(true,"");  //bu satırı eklemezsek Add kızar!
 
             //Biz istekte bulunan kişiye yaptığı işlem sonucunda işlemin başarısız olduğu mesajı veya yaptığı işlemin başlarılı old yapıları burada oluşturacağız.
-            return new SuccessResult("ürün eklendi");
+
+            return new SuccessResult(Messages.ProductAdded);
         }
 
         public List<Product> GetAll()
