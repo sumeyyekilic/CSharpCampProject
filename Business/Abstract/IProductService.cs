@@ -19,7 +19,7 @@ namespace Business.Abstract
         
         //List<ProductDetailDto> GetProductDetails();
         //Product GetById(int productId);
-        IDataResult<Product> GetById(int productId);
+        //IDataResult<Product> GetById(int productId);
         IResult Add(Product product); //void yerine IResult dedim.
     }
 }
