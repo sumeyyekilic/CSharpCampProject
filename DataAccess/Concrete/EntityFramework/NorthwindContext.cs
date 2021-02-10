@@ -11,7 +11,7 @@ namespace DataAccess.Concrete.EntityFramework
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //OnConfiguring : senin projen hangi vt ile ilişkili'yi belirteceğim yer!!
-            optionsBuilder.UseSqlServer();//sql server kul. belirtttim
+            //optionsBuilder.UseSqlServer();//sql server kul. belirtttim
         }
     }
 }

@@ -24,6 +24,17 @@ namespace Business.Concrete
         {
             _productDal = productDal;
         }
+
+        public void Add(Product product)
+        {
+            //business kodlar buraya yazılır.
+            //ürünü eklemeden önce kodları buraya yazarız, eğer geçerlşiyse ürün eklernir.
+            _productDal.Add(product);
+
+            //Biz istekte bulunan kişiye yaptığı işlem sonucunda işlemin başarısız olduğu mesajı veya yaptığı işlemin başlarılı old yapıları burada oluşturacağız.
+
+        }
+
         public List<Product> GetAll()
         {
             //iş kodları
@@ -34,6 +45,11 @@ namespace Business.Concrete
         {
             throw new NotImplementedException();
         }
+
+        //public Product GetById()
+        //{
+        //    return _productDal.Get();
+        //}
 
         public List<Product> GetByUnitPrice(decimal min, decimal max)
         {

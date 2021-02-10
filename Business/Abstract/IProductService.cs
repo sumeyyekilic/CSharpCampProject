@@ -9,9 +9,11 @@ namespace Business.Abstract
     public interface IProductService
     {
         //DATAACCESS VE ENTİTİES ref olarak verilidi : Product uing eklenebilmesi için
-        List<Product> GetAll();
+        List<Product> GetAll(); //ürün listesi döndürüyo.
         List<Product> GetAllByCategoryId(int id);
         List<Product> GetByUnitPrice(decimal min, decimal max);
-
+        //List<ProductDetailDto> GetProductDetails();
+        Product GetById();
+        void Add(Product product);
     }
 }
