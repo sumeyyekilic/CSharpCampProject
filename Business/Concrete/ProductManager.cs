@@ -30,12 +30,18 @@ namespace Business.Concrete
         {
             //business kodlar buraya yazılır.
             //ürünü eklemeden önce kodları buraya yazarız, eğer geçerlşiyse ürün eklernir.
+
+            if (product.ProductName.Length < 2)
+            {
+                return new ErrorResult("üürn ismi en az iki karakter olmalı");
+            }
+
             _productDal.Add(product);
 
-            return new Result(true,"");  //bu satırı eklemezsek Add kızar!
-            
-            //Biz istekte bulunan kişiye yaptığı işlem sonucunda işlemin başarısız olduğu mesajı veya yaptığı işlemin başlarılı old yapıları burada oluşturacağız.
+            //return new Result(true,"");  //bu satırı eklemezsek Add kızar!
 
+            //Biz istekte bulunan kişiye yaptığı işlem sonucunda işlemin başarısız olduğu mesajı veya yaptığı işlemin başlarılı old yapıları burada oluşturacağız.
+            return new SuccessResult("ürün eklendi");
         }
 
         public List<Product> GetAll()
