@@ -55,6 +55,7 @@ EntityFramework Klasörü oluşturuldu.(alternatif sistem)
 - `EfCategoryDal , EfProductDal` adında iki class oluşturuldu.  
 - bu classs'ların içerisi entity framewokre göre kodlanacak
 
+- Concrete klasörü içerisinde VT tablolarımı tutyorum.
 
 ## EF
 
