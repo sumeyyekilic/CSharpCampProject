@@ -161,6 +161,9 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
+              "C:\\Users\\sumeyye\\source\\repos\\CSharpCampProject\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\sumeyye\\source\\repos\\CSharpCampProject\\Core\\Core.csproj"
+              },
               "C:\\Users\\sumeyye\\source\\repos\\CSharpCampProject\\Entities\\Entities.csproj": {
                 "projectPath": "C:\\Users\\sumeyye\\source\\repos\\CSharpCampProject\\Entities\\Entities.csproj"
               }
@@ -232,7 +235,11 @@
         "frameworks": {
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\sumeyye\\source\\repos\\CSharpCampProject\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\sumeyye\\source\\repos\\CSharpCampProject\\Core\\Core.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

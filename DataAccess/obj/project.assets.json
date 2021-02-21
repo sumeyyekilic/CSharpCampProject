@@ -1743,9 +1743,22 @@
           "lib/net40/Unipluss.Sign.Client.dll": {}
         }
       },
+      "Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.dll": {}
+        }
+      },
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Core": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -6300,6 +6313,11 @@
         "unipluss.sign.client.nuspec"
       ]
     },
+    "Core/1.0.0": {
+      "type": "project",
+      "path": "../Core/Core.csproj",
+      "msbuildProject": "../Core/Core.csproj"
+    },
     "Entities/1.0.0": {
       "type": "project",
       "path": "../Entities/Entities.csproj",
@@ -6308,6 +6326,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "Core >= 1.0.0",
       "Entities >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.11",
       "NETStandard.Library >= 2.0.3",
@@ -6345,6 +6364,9 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
+            "C:\\Users\\sumeyye\\source\\repos\\CSharpCampProject\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\sumeyye\\source\\repos\\CSharpCampProject\\Core\\Core.csproj"
+            },
             "C:\\Users\\sumeyye\\source\\repos\\CSharpCampProject\\Entities\\Entities.csproj": {
               "projectPath": "C:\\Users\\sumeyye\\source\\repos\\CSharpCampProject\\Entities\\Entities.csproj"
             }
