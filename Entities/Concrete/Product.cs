@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Entities.Abstract;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Entities.Concrete
 {
-    public class Product
+    public class Product :IEntity
     {
         //public "bu class'a diğer katmanlar da ulaşabilsin" demek 
         //çünkü data access ürünü ekleyecek

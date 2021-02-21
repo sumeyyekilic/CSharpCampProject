@@ -73,5 +73,10 @@ namespace DataAccess.Concrete.EntityFramework
 
             }
         }
+
+        public List<Product> GetAllByCatgory(int categoryId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -2,3 +2,8 @@ C:\Users\sumeyye\source\repos\CSharpCampProject\Entities\obj\Debug\netstandard2.
 C:\Users\sumeyye\source\repos\CSharpCampProject\Entities\obj\Debug\netstandard2.0\Entities.csproj.CoreCompileInputs.cache
 C:\Users\sumeyye\source\repos\CSharpCampProject\Entities\obj\Debug\netstandard2.0\Entities.AssemblyInfoInputs.cache
 C:\Users\sumeyye\source\repos\CSharpCampProject\Entities\obj\Debug\netstandard2.0\Entities.AssemblyInfo.cs
+C:\Users\sumeyye\source\repos\CSharpCampProject\Entities\bin\Debug\netstandard2.0\Entities.deps.json
+C:\Users\sumeyye\source\repos\CSharpCampProject\Entities\bin\Debug\netstandard2.0\Entities.dll
+C:\Users\sumeyye\source\repos\CSharpCampProject\Entities\bin\Debug\netstandard2.0\Entities.pdb
+C:\Users\sumeyye\source\repos\CSharpCampProject\Entities\obj\Debug\netstandard2.0\Entities.dll
+C:\Users\sumeyye\source\repos\CSharpCampProject\Entities\obj\Debug\netstandard2.0\Entities.pdb

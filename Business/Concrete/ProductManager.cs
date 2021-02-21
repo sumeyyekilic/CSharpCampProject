@@ -78,9 +78,9 @@ namespace Business.Concrete
             throw new NotImplementedException();
         }
 
-        public IDataResult<List<Product>> GetByUnitPrice(decimal min, decimal max)
+        List<Product> IProductService.GetByUnitPrice(decimal min, decimal max)
         {
-            return new  SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.UnitPrice> min && p.UnitPrice<max));
+            return _productDal.GetAll(p => p.UnitPrice >= min && p.UnitPrice <= max);  //iki fiyat aralığında olan datayı getirir.
         }
     }
 }

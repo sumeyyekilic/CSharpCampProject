@@ -1,13 +1,14 @@
-﻿using System;
+﻿using Entities.Abstract;
+using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace DataAccess.Abstract
+namespace Core.DataAccess
 {
     //IEntity : IEntity olabilir veya IEntity implemente eden bir nesne olabilir
     //generic repository desing pattern yapmak için eklendi
-    public interface IEntityRepository<T>
+    public interface IEntityRepository<T> where T:class, IEntity, new()
     {
         //IProductDal ve ICategoryDal içeirisindeki operasyonlar kesildi.
         //Product veya Category yerine ise o an  ne yazacaksam o gelmeli.
