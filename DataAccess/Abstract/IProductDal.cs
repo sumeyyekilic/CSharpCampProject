@@ -1,4 +1,5 @@
 ﻿using Core.DataAccess;
+using DataAccess.Concrete.DTOs;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -22,5 +23,8 @@ namespace DataAccess.Abstract
 
         ////ürünleri kategoriye göre listele :
         //List<Product> GetAllByCatgory(int categoryId);
+
+        List<ProductDetailDto> GetProductDetail();
+
     }
 }
