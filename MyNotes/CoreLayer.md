@@ -43,3 +43,16 @@ Hangi katmanla ilgileneceksem o katmanla ilgili klasör koydum:
   * bu yapı ile artık projelerimde bir tablo oluşturduğumda onun için ekleme güncelleme, listeleme, silme , farklı parametrelere, filtrelemelere göre listeleme kodlarını tekrar yazmicam. Bir kere yazıp her yerde onu kullanıcam.
   * entity framework paketi core katmanına da install edildi.
  
+
+* EfProductDal içeriisini  ->  efEntityRepositoryBase içerisine alarak generate bir yapı oluşturudm.
+
+
+Northwind db içerisindeki order tablosu baz alınarak:
+
+-**Entities katmanına** Order.cs oluşturuldu
+
+- **DataAccess katmanına** :
+	- Abstruct-IOrdarDal
+	- Concrete- EntityFramework ->  EfOrderDal.cs
+	- NorthwindContext içerisine "orders" prop eklendir.
+	 
