@@ -2,6 +2,7 @@
 using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
+using DataAccess.Concrete.DTOs;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -71,6 +72,11 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.UnitPrice > min && p.UnitPrice < max));
 
+        }
+
+        public List<ProductDetailDto> GetProductDetails()
+        {
+            return _productDal.GetProductDetail();
         }
 
         IDataResult<List<Product>> IProductService.GetAllByCategoryId(int id)
