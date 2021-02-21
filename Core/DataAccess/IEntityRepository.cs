@@ -22,7 +22,7 @@ namespace Core.DataAccess
         void Delete(T entity);
 
        
-        List<T> GetAllByCatgory(int categoryId);
+        //List<T> GetAllByCatgory(int categoryId);
 
     }
 }
