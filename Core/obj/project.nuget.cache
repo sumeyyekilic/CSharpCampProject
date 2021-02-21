@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "8fhe3UREQltvP7Q+V5GMUpXrvRSv3c4Z8EdcN3rb7yzpCn172dS4T738FqwsHyDB3cM8UbcJeAAhSZosZ6mQYw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\sumeyye\\source\\repos\\CSharpCampProject\\Core\\Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
