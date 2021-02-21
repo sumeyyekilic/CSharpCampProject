@@ -55,4 +55,17 @@ Northwind db içerisindeki order tablosu baz alınarak:
 	- Abstruct-IOrdarDal
 	- Concrete- EntityFramework ->  EfOrderDal.cs
 	- NorthwindContext içerisine "orders" prop eklendir.
+
+
+- Yapılanların test edilmesi: 
+- * Business katmanında :
+- Abstruct klasörü :kategori ile ilgili dış dünyaya neyi servis etmek istiyorsam oları yazıyorum.
+	- ICategoryService.cs
+- Concrete klasörü içerisine :category'nin iş sınıfları 
+	- CategoryManager
+- Business katmanı, veri erişim katmanına bağımlıydı. bağımlıllığıı min. etmek istiyorum :
+	- ICategoryDal _categoryDal;   //bağımlıığımı constructure injection ile yapıyorum..
+
+- DTOS: join gibi operasyonları yazacağım.
+- Data Transformation Object (beni taşıyacağım objeler. , günlük hayatta sıklııkla karşılaşıyoruz.)
 	 
