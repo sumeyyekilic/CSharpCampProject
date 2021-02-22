@@ -6,13 +6,13 @@
 
 Bussiness  --product manager
 
-- WebAPI  (YAZDIĞIMIZ C# KODU ANGULAR İÇİN IOS için, Android için, Vue kodlamalarının anlayacağı bir standart. Restfull standartı ile çalışır(JSON türünde).
+- WebAPI  (Yazdığımız C# kodu Angular için, IOS için için, Android için, Vue kodlamalarının anlayacağı bir standart. Restfull standartı ile çalışır(JSON türünde).
 -web api;  DAccess ve Business ile arayuz arasında köprü sağlar.
 
 - Arayüz, yazdığımız Restfulll servise istek yapması gerekiyor. Yani request(istek). Bizim ona döndüğümüz yanıt ise response'dur.
 
-- Biz istekte bulunan kişiye yaptığı işlem sonucunda işlemin başarısız olduğu mesajı veya yaptığı işlemin başlarılı old yapıları oluşturacağız.
-
+- Web Api de : Biz istekte bulunan kişiye , yaptığı işlem sonucunda işlemin başarısız olduğu mesajı veya yaptığı işlemin başlarılı old. yapıları oluşturacağız.
+	- ve bunu bir defa yazıcaz , tekrar yazmayacağız.
 
 Enkapsülation : birden fazla data döndürmemizi sağlar.
 
