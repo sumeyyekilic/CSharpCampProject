@@ -9,6 +9,6 @@ namespace Core.Utilities.Results
                                             //interface'ler bu şekilde implemente edilir.
         //IResult implementasyonu
 
-        T Data { get; }  // data ürün, ürünler olabilri..
+        T Data { get; }  // data: ürün, ürünler olabilir.. (iş ihtiyacı gereği)
     }
 }

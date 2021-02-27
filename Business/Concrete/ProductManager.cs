@@ -33,8 +33,9 @@ namespace Business.Concrete
             //business kodlar buraya yazılır.
             //ürünü eklemeden önce kodları buraya yazarız, eğer geçerlşiyse ürün eklernir.
 
-            if (product.ProductName.Length < 2)
+            if (product.ProductName.Length < 2) //ürünün ismi min 2 karaker olmalı
             {
+                //magic string :  return new ErrorResult("ürünün ismi min 2 karaker olmalıdır!");
                 return new ErrorResult(Messages.ProductNameInvalid);
             }
 
@@ -58,15 +59,16 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Product>>(_productDal.GetAll(),Messages.ProductListed);
         }
 
-        public SuccessDataResult<List<Product>> GetAllByCategoryId(int id)
+        public IDataResult<List<Product>> GetAllByCategoryId(int id)
         {
             return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.CategoryId == id));
         }
 
-        //public Product GetById()
-        //{
-        //    return _productDal.Get();
-        //}
+        public IDataResult<Product> GetById(int productId)
+        {
+            return new SuccessDataResult<Product>(_productDal.Get(p=>p.ProductId == productId));
+        }
+
 
         public SuccessDataResult<List<Product>> GetByUnitPrice(decimal min, decimal max)
         {
@@ -74,9 +76,9 @@ namespace Business.Concrete
 
         }
 
-        public List<ProductDetailDto> GetProductDetails()
+        public SuccessDataResult<List<ProductDetailDto>> GetProductDetails()
         {
-            return _productDal.GetProductDetail();
+            return new SuccessDataResult<List<ProductDetailDto>>(_productDal.GetProductDetail());
         }
 
         IDataResult<List<Product>> IProductService.GetAllByCategoryId(int id)
@@ -84,9 +86,9 @@ namespace Business.Concrete
             throw new NotImplementedException();
         }
 
-        List<Product> IProductService.GetByUnitPrice(decimal min, decimal max)
-        {
-            return _productDal.GetAll(p => p.UnitPrice >= min && p.UnitPrice <= max);  //iki fiyat aralığında olan datayı getirir.
-        }
+        //public IDataResult<Product> GetByUnitPrice(decimal min, decimal max)
+        //{
+        //    return new SuccessDataResult<Product>(_productDal.GetAll(p => p.UnitPrice >= min && p.UnitPrice <= max));  //iki fiyat aralığında olan datayı getirir.
+        //}
     }
 }

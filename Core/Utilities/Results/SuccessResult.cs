@@ -6,7 +6,7 @@ namespace Core.Utilities.Results
 {
     public class SuccessResult :Result
     {
-        //base 'e birşey göndermek demek result demej
+        //base 'e birşey göndermek demek result demek
         public SuccessResult(string message) : base(true, message)
         {
 

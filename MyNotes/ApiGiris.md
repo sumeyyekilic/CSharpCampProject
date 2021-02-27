@@ -23,6 +23,15 @@ Enkapsülation : birden fazla data döndürmemizi sağlar.
 
  - c# 'da this demek class demek.
 Constants  :proje sabitlerinin bulunduğu yapıdır.
+- **//magic string** :  return new ErrorResult("ürünün ismi min 2 karaker olmalıdır!");
+-  **magic string** her yerde tekrar ederse ve bir yerden sonra bunu değiştirmem gerekirse öyle standart olmayan mesajlar oluşur projede.
+- bunun için geliştirdiğimiz yapı : Business katmanında ->Constants klasörü. (proje sabitlerini(nortwinnd'e özel  vs.. ) bunu içine koydum.) 
+	- metinler, mesajlar ,enumlar buraya koyulabilir..
+	- messages.cs vsburada yazdım.
+	- public static class Messages  //sabit old için **static** verildi.
+
+----
+IDataResult  :  hem işlem sonucunu hem mesajı hem de döndüreceği şeyi içeren yapı görevi görecek.
 
  - bir projede çok fazla enum varsa soyutlamadan kaçılıyordur. suistimal edilen noktalarda denebilir.
 

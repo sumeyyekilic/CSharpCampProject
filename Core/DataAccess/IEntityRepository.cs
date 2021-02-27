@@ -16,7 +16,8 @@ namespace Core.DataAccess
 
         //aşağıdaki yapı diğer classlarda tekrarlanıyor. bu yuzden T ifadesi eklendi.
         List<T> GetAll(Expression<Func<T,bool>> filter=null); //eticaret uyg.daki filtreleme aslında.... 
-                                                             //(p=>p.CategoryId==2);
+                                                              //(p=>p.CategoryId==2);
+        T Get(Expression<Func<T, bool>> filter);
         void Add(T entity);  
         void Update(T entity);
         void Delete(T entity);
