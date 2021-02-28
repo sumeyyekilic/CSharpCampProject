@@ -70,25 +70,31 @@ namespace Business.Concrete
         }
 
 
-        public SuccessDataResult<List<Product>> GetByUnitPrice(decimal min, decimal max)
-        {
-            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.UnitPrice > min && p.UnitPrice < max));
+        //public SuccessDataResult<List<Product>> GetByUnitPrice(decimal min, decimal max)
+        //{
+        //    return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.UnitPrice > min && p.UnitPrice < max));
 
-        }
+        //}
 
-        public SuccessDataResult<List<ProductDetailDto>> GetProductDetails()
-        {
-            return new SuccessDataResult<List<ProductDetailDto>>(_productDal.GetProductDetail());
-        }
+        //public SuccessDataResult<List<ProductDetailDto>> GetProductDetails()
+        //{
+        //    return new SuccessDataResult<List<ProductDetailDto>>(_productDal.GetProductDetail());
+        //}
 
         IDataResult<List<Product>> IProductService.GetAllByCategoryId(int id)
         {
             throw new NotImplementedException();
         }
 
-        //public IDataResult<Product> GetByUnitPrice(decimal min, decimal max)
-        //{
-        //    return new SuccessDataResult<Product>(_productDal.GetAll(p => p.UnitPrice >= min && p.UnitPrice <= max));  //iki fiyat aralığında olan datayı getirir.
-        //}
+        public IDataResult<List<Product>> GetByUnitPrice(decimal min, decimal max)
+        {
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.UnitPrice >= min && p.UnitPrice <= max));  //iki fiyat aralığında olan datayı getirir.
+        }
+
+        public IDataResult<List<ProductDetailDto>> GetProductDetails()
+        {
+            return new SuccessDataResult<List<ProductDetailDto>>(_productDal.GetProductDetail());
+
+        }
     }
 }
