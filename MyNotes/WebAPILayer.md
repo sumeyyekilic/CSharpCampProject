@@ -39,4 +39,19 @@ controllers--> Comman-> API -> API Controller - empty seçilerek
   -  **: ControllerBase** 'den inherit edilmesi gerekir. Ve  **[ApiController]**  -> attribute den.
   - " attribute " : bir class ile ilgili bilgi verme ve onu imzalama yöntemidir.
   - yani kısaca burada **" bu class bir controllerdır ve o yuzden kendini ona göre yapılandır"**  diyoruz .net'e  
+
+
+> ** breakpoint : (breakpoint konulan satırda program durur, bütün global/local değişkenler listelenir. Bunun dışında program durduğu
+> anda bir çok detayı görebilirsiniz.) Yazdığınız kodlama tekniğini test
+> ile yazarsanız buna ihtiyac duymazsınız..
+
+- root : bu isteği yaparken insanlar bize nasıl ulaşsın ?
+	-     [Route("api/[controller]")]
+ - web  api uygulamasını çalıştırdığımda beni karşılayan domain:  https://localhost:44362/weatherforecast
+ -  mesela bu apiyi  sumeyyekilic.com altında yayınlasaydım : `sumeyyekilic.com/api/products` olurdu.
+ - neden products geldi derseniz ? controller classının ismi ProductsController.cs olduğu için.
+ - https://localhost:44362/api/products  yazıp enter ladığımda berakpoint koyduğum yere düşüyor ve çılgın selamm mesajım sizi tarayıcıda karışılar :)
+--
+-web api projesine  "referans olarak " :  Business , Core, Entities, dataAccess ekledim.
+
   - 
