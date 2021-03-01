@@ -1,4 +1,7 @@
-﻿using Entities.Concrete;
+﻿using Business.Abstract;
+using Business.Concrete;
+using DataAccess.Concrete.EntityFramework;
+using Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -21,11 +24,12 @@ namespace WebAPI.Controllers
         [HttpGet]
         public List<Product> Get()  //uydurma bir metot, string değer döndürüyor. (metin)
         {
-            return new List<Product>
-            {
-                new Product{ProductId =1 , ProductName="Mobile"},
-                new Product{ProductId=2 ,ProductName="Bike"}
-            };
+            //kötü kod yazalım:
+            IProductService productService = new ProductManager(new EfProductDal);
+            var resultt = productService.GetAll();
+
+            //apiyi geliştiren ekip farklıysa buraya bakıp içerisinde datat bulunan yapı veriyor diyebilir.
+            return resultt.Data;
         }
 
     }
