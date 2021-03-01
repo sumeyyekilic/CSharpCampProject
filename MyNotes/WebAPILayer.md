@@ -81,3 +81,5 @@ controllers--> Comman-> API -> API Controller - empty seçilerek
 birisi senden IProductService isterse arka planda bir ProductManager oluştur ve onu ver. (yani bu tipte bir bağımlılık görürsen)
 
 ---
+
+- .net de IoC yapısı yokken autofac ,ninject ,structuremap , lightInject , dryInject gibi altyapısı sunuyormuş.
