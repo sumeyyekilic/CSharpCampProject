@@ -30,3 +30,13 @@ RESTFUL --> HTTP -->
 
 - sisteme istkte bulunak istediğinizde controller'da, size yapılabilecek istekleri kodluyorsunuz, tasarlıyorsunuz.  Mesela bizim sistemimize httpGet isteğinde bulunabilirler diyorsunuz.
 - Controller bizim uygulamamızı kullanmak isteyen clientlar (djsngo ract vue uygulamarı olabilir ) , bize **" hangi opeasyonlar için ve nasıl istekte bulunabiliri"** 'i kodluyorsunuzz....  mvc yapısında bir web uygulaması yazıldıysa, ilk olarak sizin siteyi açarken controllera istek atılır. ör:  github.com a  enter dediğinizde sizi ilk kontroller karşılar.ve ne yapılacağını orda belirlersiniz.
+
+-----
+- clientların biizim controllerımıza istekte bulunabileceği  controller'ı yazacağız.
+controllers--> Comman-> API -> API Controller - empty seçilerek
+
+* bir controller ın controller olabilmesi içi onun
+  -  **: ControllerBase** 'den inherit edilmesi gerekir. Ve  **[ApiController]**  -> attribute den.
+  - " attribute " : bir class ile ilgili bilgi verme ve onu imzalama yöntemidir.
+  - yani kısaca burada **" bu class bir controllerdır ve o yuzden kendini ona göre yapılandır"**  diyoruz .net'e  
+  - 
