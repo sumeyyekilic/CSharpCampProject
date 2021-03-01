@@ -21,15 +21,30 @@ namespace WebAPI.Controllers
         //    return "selamm";
         //}
 
+        //Loosely coupled : gevşek bağımlılık
+        IProductService _productService; //naming convention
+
+        public ProductsController(IProductService productService) //controller'a gevşek bağllık : ıproductservice bağlı
+        {
+            _productService = productService;
+        }
+
         [HttpGet]
-        public List<Product> Get()  //uydurma bir metot, string değer döndürüyor. (metin)
+        public /*List<Product>*/ string Get()  //uydurma bir metot, string değer döndürüyor. (metin)
         {
             //kötü kod yazalım:
-            IProductService productService = new ProductManager(new EfProductDal);
-            var resultt = productService.GetAll();
+            //Dependency chain  : bağımlılık servisi oluştu.
+            //IProductService productService = new ProductManager(new EfProductDal()); //bağımlı old şey product manager'dıır.
+            
+
+            
+            var resultt = _productService.GetAll();
 
             //apiyi geliştiren ekip farklıysa buraya bakıp içerisinde datat bulunan yapı veriyor diyebilir.
-            return resultt.Data;
+            return resultt.Message; //sistem bakımda hatası basar. //product manager daki GetALL da sistem saati için uyduruk bi kod yazmıştım
+                                    //burayı kullanacak kişiye doğru bilgi vermemişz gerekiyor her zaman.
+                                    //result yapısı bu şekilde sonuçlar ççıkartır.
+
         }
 
     }

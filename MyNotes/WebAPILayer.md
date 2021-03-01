@@ -54,4 +54,30 @@ controllers--> Comman-> API -> API Controller - empty seçilerek
 --
 -web api projesine  "referans olarak " :  Business , Core, Entities, dataAccess ekledim.
 
-  - 
+  - - json formatı : süslü parantez içerisinde özellik ve karşısında değeri bulucak şekilde bize format verir. özellikler çift tırnak içerisindedir.
+- restful mimariler %99.999 json formatı üzerinden ilerler.
+- bağımlılığı nasıl kadırırm ?  injection yaparak.
+
+- **şu an sistemimde hiç bir katman diğerini new'lemiyor. veya somut sınıf üzerinden gitmiyoruz.** (console tamamen test içindi.)
+-  **dal (dataaccess**)
+- **business**
+- **api**  : içerisindeyim ve içerisinde herhangi bir dal veya business somut sınıfı yok.
+- aynı şekilde manager'a (business layerda) gidince de herhangi bir dal görmüyoruz, soyut dışında.
+
+- çözümlemek demek :  mesela IProductService'e bağlı bir sınıfı new lemek demek.
+- IoC Container -- Inversion of Controll   : bir kutu gibi düşün. bellekteki bir yer. bir listenin içerisine **`new PM()` `new efPD()`** gibi referanslar koyayım içine ve kimin ihtiyacı varsa onu ona verelim.   IoC container ile beraber ; ProductController'ın IProductService ihtiyacı varsa,  ben bunu bellekte senin için newledim ve sana onu veriyorum diyorum..
+	- yani asp.net web api  bizim yerimize gidip  IoC container'a gidip IProductService  karşılık gelen bişey var mı diyor ve onu kullanıyor. bu bir konfigurasyon yani.
+
+
+- IoC her türlü proje de kullanabiliriz.
+- .net in kendi içinde  IoC container yapısı var.
+
+- Startup.cs 'e configuration service üzerinde :
+	- services.AddSingleton  ->  bana arka planda bir referans oluştur. new'lemeyi yapar ve constructor'a verir bizim yerimize.
+
+	- **singleton** tüm bellekte bir tane prodtc manager oluşturu. isterse bir milyon tane client gelsin hepsine aynı instance 'ı veriyor. yani bir milyon tane instance'dan kurtulmuş oldukk :)
+	- peki **AddSingleton**' ı ne zaman kullanıcaz ?  içerisinde data tutmuyorsak.
+-  services.AddSingleton<IProductService, ProductManager>();
+birisi senden IProductService isterse arka planda bir ProductManager oluştur ve onu ver. (yani bu tipte bir bağımlılık görürsen)
+
+---
