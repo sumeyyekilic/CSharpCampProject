@@ -32,3 +32,6 @@ UseServiceProviderFactory   : servis sağlayıcı fabrikası olarak kullan . ney
             {
                 builder.RegisterModule(new AutofacBusinessModule());
             })
+
+- eğer **autofac den vazgeçmek istersem** , yapacağım hareket **DependencyResolves** 'a kendi yapımı kurmak.
+ve ikinci olarak da yukarda yazdığım yerdeki sadece program.cs e gidip :  **AutofacServiceProviderFactory** kodunu değiştirmek yeterli. hiç bir yer bozulmaz. 
