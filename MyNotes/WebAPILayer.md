@@ -83,3 +83,14 @@ birisi senden IProductService isterse arka planda bir ProductManager oluştur ve
 ---
 
 - .net de IoC yapısı yokken autofac ,ninject ,structuremap , lightInject , dryInject gibi altyapısı sunuyormuş.
+
+
+-   :flashlight: AOP  Nedir?   örneğin siz bütün metotlarınızı loglamak istiyorsunuz. normalde  ILoggerService tarzı kullanıp  ILoggerService .Log() gibi bişey çağırrısınız. Bunun yerine ;
+- :star2: **[LogAspect]** yazacağım metodun üstüne. gidip bu metodu logla  demiş olucam.  Aop ; bir metodun önünde birr metodun sonunda  birr metodun hata verdiğinde sen nasıl dersen, o anın konf göre, çalışan kod parçacıklarını biz AOP  mimarisi ile yazıyoruz.
+   -  :star2:business içerisinde business ile yazılır. 
+   -  :star2: loglama , hata yönetimi , transaction performans cache yönetimi hatta validasyon yönetimini de bu metot içerisine koyarsak, bu metot çorbaya döner.. Bunun yerine bir altyapı olmalı.
+   -  :star2: cache altyapısını kurduğumda func başına şöyle diyeceğm ; [Cache].   
+  -  :star2: banka uygulamasında benim hesaptan keremin hesaba para taşıyacağım.  benim hesabımı güncelledi ama keremin hesabında hata aldı. O zaman yapılan işlemleri geri alması gerekiyor. func başına  **[Transaction]** operasyonu uygulayacağım.
+  -   :star2: sistemde performans olarak izlediğim bir operasyondur, eğer bu işlemin çalışması 5sn geçerse beni uyar. demekki sistemde bir yavaşlık var. [Performance]  gibi.. bunu hangi metoda yada class'a yazarsam orada uygulanır. 
+  -   :star2: Autofac bize AOP imkanı sunuyor.. 
+  - bu yuzden .NET 'in kendi IoC Container 'ına biz Autofac i enjecte edicezz :)
