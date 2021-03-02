@@ -94,3 +94,10 @@ birisi senden IProductService isterse arka planda bir ProductManager oluştur ve
   -   :star2: sistemde performans olarak izlediğim bir operasyondur, eğer bu işlemin çalışması 5sn geçerse beni uyar. demekki sistemde bir yavaşlık var. [Performance]  gibi.. bunu hangi metoda yada class'a yazarsam orada uygulanır. 
   -   :star2: Autofac bize AOP imkanı sunuyor.. 
   - bu yuzden .NET 'in kendi IoC Container 'ına biz Autofac i enjecte edicezz :)
+
+- web api bize farklı Http statülerini döndürebileceğmiz altyapı sunuyor.
+Apiyi geliştirenler , bu api ne durumda neyi veriyor , sende ona göre arayüzünü konumlandır diye ilgili dökümantasyonlar sağlarlar. Swagger kullanımı bu açıdan güzel.
+
+-  badrequest neden önemli ? data : null mu yoksa sistemde hata mı var bunu bilmek için http status code önemli bir mevzu :)
+- post request yapılırsa :  günlük hatatta twitterı açtın anasayfayı  yenilediğinde get req yapıyorsun . **Post request** ise ben sana data vereceğim. bunu alt sistemine ekle demek. İng'de gönderi demek zaten. yeni bi post attım gibi. dolayıusıyla birşey gönderiyorum. Zarfın body'sine göndereceğim mektubu ekliyorum. 
+- sektörde projelerde silme ve güncelleme içnde post kullanılıyor. ama güncelleme için put silme için delete de kullanabilriz.
