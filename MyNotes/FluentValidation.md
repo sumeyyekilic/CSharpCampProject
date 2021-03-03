@@ -61,4 +61,16 @@ oNaFTER : METOTDAN SONRA ÇALIŞSIN
 - heryere gidip kodları spagettiye çevirip her yere try cache yazmamak için bu yapılır..
 - kendime temel bir **try cache** altyapısı oluşturucam. yukardakilerden hangisini doldurursam o çalışıcak.
 - bizim metotlarımzın çatısı burasıdır. Getall çalışrrıyor gibi mettotlarımın hepsi bu kurallardan geçecek. buraya dahil olacak. (aspect de hangisini doldurrusam o çalışacak)
-- 
+
+--
+- cross cutting yapmak :
+	- Aspect -Autofac - Validation klasörleme yaptım bunn altyappısı için
+-	reflaction çalışma anında birşeyleri çalıştırabilmemizi sağlar. mesela birşeyleri newlemeyi çalıştırma anında yapmak istiyorum 
+-	**Activator.CreateInstance(_validatorType);** bu bir reflection.
+-	invocation metot demek.. unutma!
+-	iş katmanı ADD metodumda validasyon yok ama  ; Aspect ekledim şu şkeill:  **[ValidationAspect(typeof(ProductValidator))]**
+
+
+
+Tekrar Business Autofac içerisinde : register lar bizim kayıt ettiğimiz sınıflardır.
+- Autofac sizin tüüm sınıflarınız için, önce gidi bak acpecti varmı  diyor. aynı zamanda intercapter görevi görür.
