@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ekZ1r5z5FiBihIkp3P8QyuYrlWoHLbVdJ1DgVvI0l2ghlTn/6W3aPL6najs9m8MqaiLu8XNIuQQbOTBCZDsfLw==",
+  "dgSpecHash": "8JWZsBo1xLNiZYLPYuwRvXJNifqC2x+vgFkDAcceb8WtUPGnzlw2KCNtrAvkuQS7R8YxOYwXYa9Zk9emSZVghQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\sumeyye\\source\\repos\\CSharpCampProject\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sumeyye\\.nuget\\packages\\automapper\\4.1.1\\automapper.4.1.1.nupkg.sha512",
+    "C:\\Users\\sumeyye\\.nuget\\packages\\fluentvalidation\\9.5.1\\fluentvalidation.9.5.1.nupkg.sha512",
     "C:\\Users\\sumeyye\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\sumeyye\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

@@ -1,9 +1,12 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using DataAccess.Concrete.DTOs;
 using Entities.Concrete;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -33,11 +36,28 @@ namespace Business.Concrete
             //business kodlar buraya yazılır.
             //ürünü eklemeden önce kodları buraya yazarız, eğer geçerlşiyse ürün eklernir.
 
-            if (product.ProductName.Length < 2) //ürünün ismi min 2 karaker olmalı
-            {
-                //magic string :  return new ErrorResult("ürünün ismi min 2 karaker olmalıdır!");
-                return new ErrorResult(Messages.ProductNameInvalid);
-            }
+            //Validation  --!! burdaki kodlaı fluent validasyonda yazdım !
+            //if (product.UnitPrice <= 0)
+            //{
+            //    return new ErrorResult(Messages.UnitPriceInvalid);
+            //}
+
+
+            //if (product.ProductName.Length < 2) //ürünün ismi min 2 karaker olmalı
+            //{
+            //    //magic string :  return new ErrorResult("ürünün ismi min 2 karaker olmalıdır!");
+            //    return new ErrorResult(Messages.ProductNameInvalid);
+            //}
+
+            ValidationTool.Validate(new ProductValidator(), product);
+            //loglama
+            //cace
+            //performans yöentimi
+            //transaction
+            //yetkilendirme yap  vs... yine bir sürü kod olacak burada
+            //bunun yerine 
+            //[Validate] yapısını kurup metodun üzerine yazarsam gidip o parametreyi okuycak ilgili validaterı bulup validation yapacak
+
 
             _productDal.Add(product);
 

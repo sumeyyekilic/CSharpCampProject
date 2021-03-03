@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "2isftv/D8vdmxaCgvCmFZWNumD4si1b5lbwXZz2bQll9HelWMNTNoYIgE1xt8LKISGQWE26oa/nBF/N/JF1EnQ==",
+  "dgSpecHash": "jtYdlgrwfFmj+qe4KgrdeiODFe7LC3G1Lr63phM6uiN/C53O+4Wz9SyqDGyIDVpV/FbTJwG3vJ3KCKxcCE1mQA==",
   "success": true,
   "projectFilePath": "C:\\Users\\sumeyye\\source\\repos\\CSharpCampProject\\Entities\\Entities.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\sumeyye\\.nuget\\packages\\fluentvalidation\\9.5.1\\fluentvalidation.9.5.1.nupkg.sha512",
     "C:\\Users\\sumeyye\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\sumeyye\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

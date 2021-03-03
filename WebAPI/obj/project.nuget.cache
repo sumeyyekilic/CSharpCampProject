@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OhpRY0tA0zFtnCCMUy8hNGb752WhYeaq9CJKEBatZYey9CCgi8lI+fm9ai+rEwxmzPKoYewynsxMA2z4v4W+dg==",
+  "dgSpecHash": "d1FvPbaeflasUI9y2kDf2sPlNkmbsyrFpKNOzZvl0EU1+PcBrcQI8UhiCsuK0oLqZ7xz3H9E1DZhWxl3L6tt9A==",
   "success": true,
   "projectFilePath": "C:\\Users\\sumeyye\\source\\repos\\CSharpCampProject\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\sumeyye\\.nuget\\packages\\autofac.extras.dynamicproxy\\6.0.0\\autofac.extras.dynamicproxy.6.0.0.nupkg.sha512",
     "C:\\Users\\sumeyye\\.nuget\\packages\\automapper\\4.1.1\\automapper.4.1.1.nupkg.sha512",
     "C:\\Users\\sumeyye\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
+    "C:\\Users\\sumeyye\\.nuget\\packages\\fluentvalidation\\9.5.1\\fluentvalidation.9.5.1.nupkg.sha512",
     "C:\\Users\\sumeyye\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\sumeyye\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
