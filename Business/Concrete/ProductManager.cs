@@ -31,6 +31,7 @@ namespace Business.Concrete
             _productDal = productDal;
         }
 
+        [ValidationAspect(typeof(ProductValidator))] //add metodunu ProductValidator göre kodla
         public IResult Add(Product product)
         {
             //business kodlar buraya yazılır.

@@ -43,3 +43,22 @@ Cross cutting Concerns  farklı katmanlarda farklı versiyonları yapılabilir .
 
 Core katmanında : Cross cutting Concerns klasörü oluşturdum onun içerisine de cache yapacaksam cache klasörü, gb gbii. yapı oluşturacağım.
 
+-aop metotlarımı loglamak istiyordum. log ne zaman yapılır :  bir metoto ya başında ya sonunda yada hata verdiğinde loglanır. burada çalışmasını istediğim kodları AOP ile desing edebilirim. her yerde **try cache** demek zorunda kalmam yada her yerde log log log gibi demek zorunda kalmam.. :)
+bu yönteme **interceptors** denir . **"araya girmek" demek.**
+
+attribute : log cache gibi şeyleri biz metodun üstüne attribute olarak koyuyoruz . attribute lar sen bi kodu çağıracağın zaman git üstüne bak belli kalıba uyan log gibi kurallar var mı varsa bu metot çalışmadan önce loglama kodları çalışacak diyoruz.   class lara metotlara anlam yükleyen yapılardır.
+
+
+- Core katmanına ;  **Autofac , Autofac.Extras.DynamicProxy**  install ettim . AOP yapısını sağlayacak olan altyapı bu arkadaşlardan geliyor. 
+
+- Priority :öncelik demek. mesela önce loglama gibi..
+-  **OnBefore** : metodun başında çalıştırır.
+**OnSuccess** : metot başarılı old çalışsın
+**OnException**  : hata aldığında
+oNaFTER : METOTDAN SONRA ÇALIŞSIN
+
+- %90 ONBEFORE VE ONECEPTİON kullanırız..
+- heryere gidip kodları spagettiye çevirip her yere try cache yazmamak için bu yapılır..
+- kendime temel bir **try cache** altyapısı oluşturucam. yukardakilerden hangisini doldurursam o çalışıcak.
+- bizim metotlarımzın çatısı burasıdır. Getall çalışrrıyor gibi mettotlarımın hepsi bu kurallardan geçecek. buraya dahil olacak. (aspect de hangisini doldurrusam o çalışacak)
+- 
