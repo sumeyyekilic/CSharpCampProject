@@ -2,6 +2,7 @@
 using Autofac.Extras.DynamicProxy;
 using Business.Abstract;
 using Business.Concrete;
+using Business.CSS;
 using Castle.DynamicProxy;
 using Core.Utilities.Interceptors;
 using DataAccess.Abstract;
@@ -18,6 +19,7 @@ namespace Business.DependencyResolves.Autofac
         {
             builder.RegisterType<ProductManager>().As<IProductService>().SingleInstance();
             builder.RegisterType<IProductDal>().As<EfProductDal>().SingleInstance();
+            builder.RegisterType<FileLogger>().As<ILogger>().SingleInstance(); //eğer senden biri ılogger isterse, arka planda oluşturduğun filelogger'ı ver,
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();//çalışan uy içerisinde
 

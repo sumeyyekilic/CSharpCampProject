@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.CSS;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingConcerns.Validation;
@@ -27,13 +28,15 @@ namespace Business.Concrete
         IProductDal _productDal; //soyut nesne ile bağlant kuracağım.
                                  //ne entity framework nede entity ismi geçecek.
 
-        public ProductManager(IProductDal productDal)
+        ILogger _Ilogger;
+        public ProductManager(IProductDal productDal, ILogger logger) //ctora ben product olarak ıloggera iht duyuyorum dedim.
         {
+            _Ilogger = logger;
             _productDal = productDal;
         }
 
         //validasyon yok ama  ; Aspect ekledim 
-        [ValidationAspect(typeof(ProductValidator))] //add metodunu ProductValidator göre kodla
+        //[ValidationAspect(typeof(ProductValidator))] //add metodunu ProductValidator göre kodla
         public IResult Add(Product product)
         {
             //business kodlar buraya yazılır.
@@ -52,7 +55,7 @@ namespace Business.Concrete
             //    return new ErrorResult(Messages.ProductNameInvalid);
             //}
 
-            ValidationTool.Validate(new ProductValidator(), product);
+            //ValidationTool.Validate(new ProductValidator(), product);
             //loglama
             //cace
             //performans yöentimi
@@ -61,14 +64,25 @@ namespace Business.Concrete
             //bunun yerine 
             //[Validate] yapısını kurup metodun üzerine yazarsam gidip o parametreyi okuycak ilgili validaterı bulup validation yapacak
 
+            _Ilogger.Log(); //bunu rty içine de ekleyebilirim
+            try
+            {
+                _productDal.Add(product);
 
-            _productDal.Add(product);
+                //return new Result(true,"");  //bu satırı eklemezsek Add kızar!
 
-            //return new Result(true,"");  //bu satırı eklemezsek Add kızar!
+                //Biz istekte bulunan kişiye yaptığı işlem sonucunda işlemin başarısız olduğu mesajı veya yaptığı işlemin başlarılı old yapıları burada oluşturacağız.
 
-            //Biz istekte bulunan kişiye yaptığı işlem sonucunda işlemin başarısız olduğu mesajı veya yaptığı işlemin başlarılı old yapıları burada oluşturacağız.
+                return new SuccessResult(Messages.ProductAdded);
+            }
+            catch (Exception exception)
+            {
+                _Ilogger.Log(); //
+            }
+            return new ErrorResult(); //ErrorDataResult deyip birşey de döndürebiliriz
 
-            return new SuccessResult(Messages.ProductAdded);
+
+
         }
 
         public IDataResult<List<Product>> GetAll()
