@@ -64,21 +64,33 @@ namespace Business.Concrete
             //bunun yerine 
             //[Validate] yapısını kurup metodun üzerine yazarsam gidip o parametreyi okuycak ilgili validaterı bulup validation yapacak
 
-            _Ilogger.Log(); //bunu rty içine de ekleyebilirim
-            try
+            //_Ilogger.Log(); //bunu rty içine de ekleyebilirim
+            //try
+            //{
+            //    _productDal.Add(product);
+
+            //    //return new Result(true,"");  //bu satırı eklemezsek Add kızar!
+
+            //    //Biz istekte bulunan kişiye yaptığı işlem sonucunda işlemin başarısız olduğu mesajı veya yaptığı işlemin başlarılı old yapıları burada oluşturacağız.
+
+            //    return new SuccessResult(Messages.ProductAdded);
+            //}
+            //catch (Exception exception)
+            //{
+            //    _Ilogger.Log(); //
+            //}
+
+            //bir kategoride en fazla 10 ürün olabilir : BU YÖNTEM YANLIŞ :) çünkü iş kuralı ve başka iş kuralları da olabilir.update yaparken de bu kural geçerli çünkü..
+            var result = _productDal.GetAll(p => p.CategoryId == product.CategoryId).Count; //o kategorideki ürünleri bulursun
+            if(result >= 10)
             {
-                _productDal.Add(product);
-
-                //return new Result(true,"");  //bu satırı eklemezsek Add kızar!
-
-                //Biz istekte bulunan kişiye yaptığı işlem sonucunda işlemin başarısız olduğu mesajı veya yaptığı işlemin başlarılı old yapıları burada oluşturacağız.
-
-                return new SuccessResult(Messages.ProductAdded);
+                return new ErrorResult(Messages.ProductCounOfCategoryError); 
             }
-            catch (Exception exception)
-            {
-                _Ilogger.Log(); //
-            }
+
+
+            _productDal.Add(product);
+
+
             return new ErrorResult(); //ErrorDataResult deyip birşey de döndürebiliriz
 
 

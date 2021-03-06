@@ -11,5 +11,7 @@ namespace Business.Constants
         public static string ProductNameInvalid = "Ürün ismi geçesizdir.."; //basit bir değişken olmasına rağmen büyük harf ile yazdım. public old için pascalCase!
         internal static string ProductListed;
         internal static List<Product> MaintenanceTime;
+
+        public static string ProductCounOfCategoryError="bir kategoride en fazla 110 ürün olabilir"
     }
 }
