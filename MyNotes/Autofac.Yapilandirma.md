@@ -115,4 +115,59 @@ invocation : business method.
 ### CleanCode tekniği
 - temiz kod yazma ve  mikroservis mimariği mantığı  üzerine :
 -  yönetim : bir ürün eklemek istersen ekelemek istediğin ürünün kategorisinde max 10 ürün olabilir. Bunun için bir kural yazdsım :
+- do not repaet your self!
+- iş kurallarını  şu şekilde yazarsak , istediğiniz kadar katmanlı mimari kullanının spagetti kod olacak.:  
+-  
+
+    //bir kategoride en fazla 10 ürün olabilir : BU YÖNTEM YANLIŞ :) çünkü iş kuralı ve başka iş kuralları da olabilir.update yaparken de bu kural geçerli çünkü.. 
+                //iş kuralı kategoride 15 ürün olabilir diye değiştiğinde gelip burrda değişitirmem kötü bir kodlama. yazılımcı kendini tekrar edecek. ve updatee metodunda bunu güncellemeyi unuttuysa hata yapar.
+                var result = _productDal.GetAll(p => p.CategoryId == product.CategoryId).Count; //o kategorideki ürünleri bulursun
+                if(result >= 10)
+                {
+                    return new ErrorResult(Messages.ProductCounOfCategoryError); 
+                }
+
+- daha algoritmik bir yapıya iş kuralına ihtiyacımız olduğunda bunların işlenmesi gerek.
+yukardaki kodu quick action refactirining seçip 
+-  mevcut kodları analiz edip 
+
+- #aynı isimde ürün eklenemez  (bizim eklemeye çalıştığımz ürün ismi daha önceden veritabanında varsa onu ekleyemez. )
+
+		 private IResult CheckIfProductNameExist(string productName) // kategoride ki ürün sayısının kurallara uygunluğunu doğrula 
+        {
+            //aynı isimde ürün eklenemez: 
+            var result = _productDal.GetAll(p => p.ProductName == productName).Any();  // any() uyan kayıt var mı ?
+            if (result)//eğer böyle bir data varsa
+            {
+                return new ErrorResult(Messages.ProductNameAlreadyExists); //ProductNameAlreadyExists : böyle bir ürün zaten var demek
+            }
+            return new SuccessResult();
+        }
+
+### iyileştirmeler
+-  iş kurallarını bir standarta göre yazdık hepsi IResult dödürüyor. Birtane iş motoru yazsak, oraya iş kurallarımızı göndersek.  . Bunun için **polymorphism** (polimorfizm) kullanabiliriz.  amacım bu iş kuralllarını bir yere göndereyiim, o benim iiçin kaç tane iş kuralı gönderirisem onları çalıştırsa. 
+- Bunu hangi katmana yazmalıyım ? tüm projelerde çalıştırılabilir yapı old iiçin Cora'a yazmalıyım.
+	- `core-->Utilities  -->Business(add) --> BusinessRules.cs` oluştrdum... buraya standart bir hata döndürme metodu yazdım : 
 	- 
+
+	   //buraya iş kurallarını  gönder
+	    public static IResult Run(params IResult[] logics) //params IResult[] logics  : params verdiğimizde run içerisine istediğimiz kadar parametre gönderebiliyoruz. gönderdiğiniz tüm parametreleri array haline getirip IResult arrayi olan logics'e gönderiyor.
+	    {
+	        //parametre ile gönderilen iş kurallarından başarısız olanı business'a haberdar ediyoruz.
+	        foreach (var logic in logics)//her bir  logic için iş kuralını gez
+	        {
+	            if (!logic.Sussess) //logic'in succes durumu başarısız ise
+	            {
+	                return logic;
+	            }
+	        }
+	        return null; //başarılı ise birşey döndürmesine gerek yok.
+	    }
+	-	Daha sonra Product managerda  bu iş motorunu çalıştırabilirim : aşağıdaki yapıya istediğim kadar iş kuralı ekleyebilirim :
+
+		- **BusinessRules.Run(CheckIfProductNameExist(product.ProductName),
+                CheckIfProductCountOfCategoryCorrect(product.CategoryId));** // iş kurallarını çalıştıracak. isterse bin tane iş kuralı olsun
+
+ ----
+ - overdesing : aşırı tasarım . sistemler %100 solid olamaz. problemi.
+* 

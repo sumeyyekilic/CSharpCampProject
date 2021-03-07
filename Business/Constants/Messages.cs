@@ -12,6 +12,7 @@ namespace Business.Constants
         internal static string ProductListed;
         internal static List<Product> MaintenanceTime;
 
-        public static string ProductCounOfCategoryError="bir kategoride en fazla 110 ürün olabilir"
+        public static string ProductCounOfCategoryError = "bir kategoride en fazla 110 ürün olabilir";
+        public static string ProductNameAlreadyExists ="bu isimde zaten başka bir ürün var";
     }
 }
