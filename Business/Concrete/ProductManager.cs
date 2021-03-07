@@ -39,6 +39,9 @@ namespace Business.Concrete
             _productDal = productDal;
         }
 
+        //Claim
+        //[SecuredOperation("product.add")]
+
         //validasyon yok ama  ; Aspect ekledim 
         [ValidationAspect(typeof(ProductValidator))] //add metodunu ProductValidator göre kodla
         public IResult Add(Product product)
