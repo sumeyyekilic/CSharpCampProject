@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -18,14 +19,17 @@ namespace Business.Concrete
         }
 
         //iş kodlarını yazabilmem için ICategoryService ikinci kez implamente istiyor.
-        public List<Category> GetAll()
+        public IDataResult<List<Category>> GetAll()
         {
-            return _categoryDal.GetAll();
+            //yeni bir iş kuralı gelirse auth. gibi buraya yazarız ve vurası her yeri etkiler.
+            //bu yuzden dalı enjecte etmiyoruz. her entity nin kendi servisi olacak.
+
+            return new SuccessDataResult<List<Category>>(_categoryDal.GetAll());
         }
 
-        public Category GetById(int categoryId)
+        public IDataResult<Category> GetById(int categoryId)
         {
-            return _categoryDal.Get(c => c.CategoryId == categoryId);
+            return new SuccessDataResult<Category>( _categoryDal.Get(c => c.CategoryId == categoryId));
         }
     }
 }

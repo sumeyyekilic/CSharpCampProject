@@ -170,4 +170,4 @@ yukardaki kodu quick action refactirining seçip
 
  ----
  - overdesing : aşırı tasarım . sistemler %100 solid olamaz. problemi.
-* 
+* bir **Entity manager** kendisi hariç başka dalı enjekte edemez. Bunun yerine başka bir servisi enjekte edebilriiz.

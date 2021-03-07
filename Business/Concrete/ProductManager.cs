@@ -30,10 +30,12 @@ namespace Business.Concrete
         IProductDal _productDal; //soyut nesne ile bağlant kuracağım.
                                  //ne entity framework nede entity ismi geçecek.
 
-        ILogger _Ilogger;
-        public ProductManager(IProductDal productDal, ILogger logger) //ctora ben product olarak ıloggera iht duyuyorum dedim.
+        ICategoryService _categoryService;   // bir **Entity manager** kendisi hariç başka dalı enjekte edemez. Bunun yerine başka bir servisi enjekte edebilriiz.
+        //ILogger _Ilogger;
+        public ProductManager(IProductDal productDal, /*ILogger logger,*/ ICategoryService categoryService) //ctora ben product olarak ıloggera iht duyuyorum dedim.
         {
-            _Ilogger = logger;
+            _categoryService = categoryService;
+            //_Ilogger = logger;
             _productDal = productDal;
         }
 
@@ -102,7 +104,8 @@ namespace Business.Concrete
 
             //Polymorphism   : YUKARDAKİ çirkin koda gerek kalmadı. core katmnına yazdığım standat polymorphism ile şu şekilde 1000 tane bile iş kuralı gönderebilrim.
             IResult result = BusinessRules.Run(CheckIfProductNameExist(product.ProductName),
-                CheckIfProductCountOfCategoryCorrect(product.CategoryId)); // iş kurallarını çalıştıracak. isterse bin tane iş kuralı olsun
+                CheckIfProductCountOfCategoryCorrect(product.CategoryId),
+                CheckIfCategoryLimitExist()); // iş kurallarını çalıştıracak. isterse bin tane iş kuralı olsun
 
             if (result != null)//kurala uymayan bir durum oluşmuşsa 
             {
@@ -189,6 +192,18 @@ namespace Business.Concrete
             if (result)//eğer böyle bir data varsa
             {
                 return new ErrorResult(Messages.ProductNameAlreadyExists); //ProductNameAlreadyExists : böyle bir ürün zaten var demek
+            }
+            return new SuccessResult();
+        }
+
+        //eğer mevcut kategri sayısı 15i geçtiyse sisteme yeni bir ürün eklenemez. (miksrodervis mimarilere nasıl bakmamız gerekiyor ?'u iyi anlarız.. sektorde çok az kişinin yaptığı :) )
+        private IResult CheckIfCategoryLimitExist()
+        { 
+            var result = _categoryService.GetAll();  
+            if(result.Data.Count>15)
+            {
+                return new ErrorResult(Messages.CatgoryLimitedExists); //BU kuralı neden  category service de yazmadık ?  eğer kat yazıyorsak bu tek başına servis olurdu ama bu bizim productın category servisini nasıl yorumdaığı olayıdır. o yuzden product içine yazarız. ve kontrol altına almış oluruz
+                                                                        //eğer bu kuralı cat. managera ayazarsak bu tek başına servis olur.bu metod o servisi kullanan bir ürünün onu nasıl ele aldığıyla ilgilidr.  
             }
             return new SuccessResult();
         }
