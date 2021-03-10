@@ -1,5 +1,8 @@
 using Business.Abstract;
 using Business.Concrete;
+using Core.DependencyResolves;
+using Core.Extensions;
+using Core.Utilities.IoC;
 using Core.Utilities.Security.Encryption;
 using Core.Utilities.Security.JWT;
 using DataAccess.Abstract;
@@ -39,6 +42,8 @@ namespace WebAPI
             //services.AddSingleton<IProductDal, EfProductDal>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            //TÜM UYG ilgilendiren injectionlar eklenecek.
+
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
             
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -55,6 +60,8 @@ namespace WebAPI
                         IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey)
                     };
                 });
+            services.AddDependencyResolvers( new ICoreModule[] { 
+                                    new CoreModule()});  //coremodu gibi farklý modüller oluþturusak injection için buraya new CoreModule() 'den sonra virgül ile ekleyebilriz..
 
         }
 
