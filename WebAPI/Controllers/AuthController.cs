@@ -21,13 +21,13 @@ namespace WebAPI.Controllers
         public ActionResult Login(UserForLoginDto userForLoginDto)
         {
             var userToLogin = _authService.Login(userForLoginDto);
-            if (!userToLogin.Success)
+            if (!userToLogin.Sussess)
             {
                 return BadRequest(userToLogin.Message);
             }
 
             var result = _authService.CreateAccessToken(userToLogin.Data);
-            if (result.Success)
+            if (result.Sussess)
             {
                 return Ok(result.Data);
             }
@@ -39,14 +39,14 @@ namespace WebAPI.Controllers
         public ActionResult Register(UserForRegisterDto userForRegisterDto)
         {
             var userExists = _authService.UserExists(userForRegisterDto.Email);
-            if (!userExists.Success)
+            if (!userExists.Sussess)
             {
                 return BadRequest(userExists.Message);
             }
 
             var registerResult = _authService.Register(userForRegisterDto, userForRegisterDto.Password);
             var result = _authService.CreateAccessToken(registerResult.Data);
-            if (result.Success)
+            if (result.Sussess)
             {
                 return Ok(result.Data);
             }

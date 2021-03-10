@@ -7,6 +7,7 @@ using System.Text;
 using Castle.DynamicProxy;
 using Microsoft.Extensions.DependencyInjection;
 using Business.Constants;
+using Core.Extensions;
 
 namespace Business.BusinessAspects.Autofact
 {
@@ -26,7 +27,7 @@ namespace Business.BusinessAspects.Autofact
         protected override void OnBefore(IInvocation invocation)
         {
             var roleClaims = _httpContextAccessor.HttpContext.User.ClaimRoles(); //o anki kullanıcının claim rollerini çöz
-            foreach (var role in _roles//kullanıcını rollerini gez. 
+            foreach (var role in _roles)//kullanıcını rollerini gez. 
             {
                 if (roleClaims.Contains(role)) //claimlerin içinde ilgili rol varsa retrn et
                 {
