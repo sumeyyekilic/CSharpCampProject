@@ -11,5 +11,6 @@ namespace Core.Utilities.Results
         //bir işlem sonucu ve birde kullanıcıyı bilg adına msj olsun:
         bool Sussess { get; } //get'ler okumak için
         string Message { get; }
+        bool Success { get; set; }
     }
 }

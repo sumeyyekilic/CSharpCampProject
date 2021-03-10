@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.BusinessAspects.Autofact;
 using Business.Constants;
 using Business.CSS;
 using Business.ValidationRules.FluentValidation;
@@ -40,8 +41,7 @@ namespace Business.Concrete
         }
 
         //Claim
-        //[SecuredOperation("product.add")]
-
+        [SecuredOperation("product.add, addmin")]
         //validasyon yok ama  ; Aspect ekledim 
         [ValidationAspect(typeof(ProductValidator))] //add metodunu ProductValidator göre kodla
         public IResult Add(Product product)
