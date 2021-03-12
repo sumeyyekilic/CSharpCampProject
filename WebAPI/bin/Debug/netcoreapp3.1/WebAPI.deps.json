@@ -29,7 +29,7 @@
           "Core": "1.0.0",
           "DataAccess": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.2",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.12",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -395,14 +395,14 @@
           "lib/netstandard2.0/FluentValidation.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.2": {
+      "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.12": {
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "5.5.0"
         },
         "runtime": {
           "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
-            "assemblyVersion": "3.1.2.0",
-            "fileVersion": "3.100.220.6801"
+            "assemblyVersion": "3.1.12.0",
+            "fileVersion": "3.100.1221.7012"
           }
         },
         "compile": {
@@ -1622,6 +1622,7 @@
           "Autofac": "6.1.0",
           "Autofac.Extras.DynamicProxy": "6.0.0",
           "FluentValidation": "9.5.1",
+          "Microsoft.AspNetCore.Http": "2.2.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.11",
           "Microsoft.IdentityModel.Tokens": "6.8.0",
           "System.IdentityModel.Tokens.Jwt": "6.8.0"
@@ -3322,12 +3323,12 @@
       "path": "fluentvalidation/9.5.1",
       "hashPath": "fluentvalidation.9.5.1.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.2": {
+    "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-hBgNbsvTgk8svtlCWkKXb1z8c0M29vjDKNJFAifoyZiIUYuv/Rn/hqb7gg8QuLW15NeG9r1PlLmoArdSjTHHZA==",
-      "path": "microsoft.aspnetcore.authentication.jwtbearer/3.1.2",
-      "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.3.1.2.nupkg.sha512"
+      "sha512": "sha512-Kl6VnydiO9kh4xGo5PugXYViy6kVNxV3UrAvF1sDmMTpkSKtcLsdHWVflzGTD8HUnm8VpvzF1z9/1cmNBeYXOg==",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/3.1.12",
+      "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.3.1.12.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Http/2.2.2": {
       "type": "package",
