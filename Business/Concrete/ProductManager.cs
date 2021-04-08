@@ -141,6 +141,7 @@ namespace Business.Concrete
         }
 
         [CacheAspect]
+        [PerformanceAspect(5)]  //bu metodun çalışması 5sn geçerse beni uyar diyorum.  Buradan performans zafiyetine sebep olan metodu bulmuş olucam.
         public IDataResult<Product> GetById(int productId)
         {
             return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == productId));

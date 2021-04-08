@@ -6,6 +6,7 @@ using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace Core.DependencyResolves
@@ -22,6 +23,10 @@ namespace Core.DependencyResolves
             //birisi senden ICacheManager  isterse ona MemoryCacheManager(bizim) ver
             serviceCollection.AddSingleton<ICacheManager, MemoryCacheManager>();
             //yarın ben redis cache istersm burada MemoryCacheManager yerine  RedisCacheManager yazmam yeterli.
+
+
+            serviceCollection.AddSingleton<Stopwatch>();
+
         }
 
     }
