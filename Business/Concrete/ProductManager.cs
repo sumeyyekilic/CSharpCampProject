@@ -4,6 +4,7 @@ using Business.Constants;
 using Business.CSS;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Caching;
+using Core.Aspects.Autofac.Transaction;
 using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Business;
@@ -215,6 +216,21 @@ namespace Business.Concrete
                                                                         //eğer bu kuralı cat. managera ayazarsak bu tek başına servis olur.bu metod o servisi kullanan bir ürünün onu nasıl ele aldığıyla ilgilidr.  
             }
             return new SuccessResult();
+        }
+
+        [TransactionScopeAspect]
+        public IResult AddTarnsactionTest(Product product)
+        {
+            
+            Add(product);
+            if (product.UnitPrice < 10)
+            {
+                throw new Exception("");
+            }
+            //senaryo kuruyoum. 
+
+            Add(product);
+            return null;
         }
     }
 }

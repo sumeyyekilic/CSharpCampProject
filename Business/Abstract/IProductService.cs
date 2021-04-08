@@ -23,5 +23,7 @@ namespace Business.Abstract
         //IDataResult<Product> GetById(int productId);
         IResult Add(Product product); //void yerine IResult dedim.
         IResult Update(Product product);
+
+        IResult AddTarnsactionTest(Product product);    
     }
 }
