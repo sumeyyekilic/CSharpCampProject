@@ -35,3 +35,44 @@ Core tarafında bi aspect yazmadan önce , cache için cross cutting curser klas
 -**serviceCollection.AddMemoryCache();**  //arka planda hazır bir  ICacheManager instanse ı oluşturuyor. Hazır cache yapıları için oluşturulmuş.
  - //RemoveByPattern metodu :Çalışma anında bellekten silmeyi sağlar.
 - Reflection: elimizde bir sınıfın instance'i var bellekte ve ona çalışma anında müdahale etmek istiyoruz. Bunu Reflection ile yapıyorduk. Çalışma anında elimizde bulunan nesnelere ve olmayanlarıda yeniden oluşturmak gibi çalışmalar yapabilileceğimiz bir yapıdır. Kısaca kodu çalışma anında oluşturma, çalışma anında müdahale etme gibi şeyleri ""reflaction"" ile yaparız.
+
+
+AMACIM :  "bir aspect yazayım ve benim için i**lgili metodu daha çalışmaya başlamadan kontrol etsin** ve **cache de varsa cacheden getirsin** **eğer yoksa veriitabanından getirip cache'e eklesin** ve bu şekilde çalışsın" :) istiyorum..
+
+
+**ReflectedType**  namespace  mesela  **namespace   Business.Concreate**
+**ReflectedType.FullName:**    namespace + class ismi veriri. -->  namespace   **Business.Concreate  + IProductService**
+
+her metodu üstüne    [CacheAspect] konulmaz !!
+
+-     
+    :star: diyelim ben bi eticaret sitesi yaptım. ürünler filtreleniyor ve çoğunlukla bunlar cache den gelir. çok sık kullanılmayan bi metot vardır birkaç günde bir çağrılıyor ve büyük data döndürüyorsa bu cache'e konulmaz..
+    **CacheRemoveAspect**   :    datamız ne zaman bozulur?  yeni data eklenirse güncelelnir veya silinirse. Eğer bi manager'da cache yönetimi yapıyorssan o manager da veriyi manupüle eden metotlarına  :CacheRemoveAspect    uygularsın !!
+
+- cache'i yaparken öemli 2 şey var 
+**1**.Manipulasyon yapan meotlarımı cach Aspect ile yönetmek
+**2**. business arayuze yazmak hatadır. Business'i tek bir çatıda kullanmak. 
+Veritabanına gidip el ile data eklemek problem :D
+
+
+-   
+:fire: Transaction yönetimi : uygulamalarda tutarlılığı korumak için yaptığımız yöntem. ör: benim hesabımda 100tl var. keremi heesabına 10 tl aktarıcam. benim hesabım 10 tl düşecek şekilde update edilmesi, kereminde hesabını 10 tl artacak şekilde update edilmesi gerekir.  yani 2 işlem var. 2 veritabanı işi. benim hesabımdan giderken güncelledi ve keremin hesabına yazarken hata verdi.. burda işlemi geri alması gerekir. Bunu nasıl yaparım ?
+( bir şablon oluşturuyorum. TransactionScopeAspect olarak.) 
+
+Aspect oriented programming bir yerden sonra kolaylaşıyor.
+
+**sistem neden yavaş sorunu :)**
+- bunun  için "sistemimize yoğun sorgulama operasyolarında, sistemde bir performans zafiyeti varsa sistem bizi uyarsın.." yapabilriiz.
+
+metodun ne kadar süreceğine dair timer koydum : private  Stopwatch  _stopwatch;
+- core madule'a Stopwatch eklenir.
+
+- ilgili metoda;
+-    [PerformanceAspect(5)]  **//bu metodun çalışması 5sn geçerse beni uyar diyorum.  Buradan performans zafiyetine sebep olan metodu bulmuş olucam.**
+- eğer bunu core da  Intercepter ların oldğpu yere koyarsam sistemde her şeyi takip eder :)
+
+
+
+-----
+
+-- ** **Reflaction**--  ** **Intercept araştırması**   Dispose ? -- UnitOfWork ?
