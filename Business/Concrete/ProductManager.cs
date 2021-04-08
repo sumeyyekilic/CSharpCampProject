@@ -3,6 +3,7 @@ using Business.BusinessAspects.Autofact;
 using Business.Constants;
 using Business.CSS;
 using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Caching;
 using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Business;
@@ -40,10 +41,12 @@ namespace Business.Concrete
             _productDal = productDal;
         }
 
+
         //Claim
         [SecuredOperation("product.add, addmin")]
         //validasyon yok ama  ; Aspect ekledim 
         [ValidationAspect(typeof(ProductValidator))] //add metodunu ProductValidator göre kodla
+        [CacheRemoveAspect("IProductService.Get")] //Get : bellekte key içerisinde Get olanları iptal eder.. Ama IProductService.Get sadece IProductService içinde ki Get'leri siler.
         public IResult Add(Product product)
         {
             //business kodlar buraya yazılır.
@@ -119,7 +122,7 @@ namespace Business.Concrete
             return new ErrorResult();
         }
 
-
+        [CacheAspect] //key  value
         public IDataResult<List<Product>> GetAll()
         {
             //iş kodları
@@ -136,6 +139,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.CategoryId == id));
         }
 
+        [CacheAspect]
         public IDataResult<Product> GetById(int productId)
         {
             return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == productId));
@@ -156,7 +160,9 @@ namespace Business.Concrete
             return new SuccessDataResult<List<ProductDetailDto>>(_productDal.GetProductDetail());
 
         }
+
         [ValidationAspect(typeof(ProductValidator))]
+        [CacheRemoveAspect("IProductService.Get")] //Get : bellekte key içerisinde Get olanları iptal eder.. Ama IProductService.Get sadece IProductService içinde ki Get'leri siler.
         public IResult Update(Product product)
         {
             //burada ADD metodundan daha farklı durumla olabilir. sadece mantık yakalamak için yukardaki kodu aldım

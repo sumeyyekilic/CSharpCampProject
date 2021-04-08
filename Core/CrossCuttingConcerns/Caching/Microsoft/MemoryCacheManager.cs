@@ -55,7 +55,7 @@ namespace Core.CrossCuttingConcerns.Caching.Microsoft
             //Reflection: elimizde bir sınıfın instance'i var bellekte ve ona çalışma anında müdahale etmek istiyoruz. Bunu Reflection ile yapıyorduk
             //çalışma anında elimizde bulunan nesnelere ve olmayanlarıda yeniden oluşturmak gibi çalışmalar yapabilileceğimiz bir yapıdır.
             //Kısaca kodu çalışma anında oluşturma, çalışma anında müdahale etme gibi şeyleri ""reflaction"" ile yaparız.
-
+             
             var cacheEntriesCollectionDefinition = typeof(MemoryCache).GetProperty("EntriesCollection", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);  //Gidip  belleğe bak ;MemoryCache türünde olan EntriesCollection'ı bul. bunu .net dökümantasyınunda bellekte nasıl tuttuğuna dair bilgi veriyor
             var cacheEntriesCollection = cacheEntriesCollectionDefinition.GetValue(_memoryCache) as dynamic;   //Definition'ı _memoryCache olanları bul.
             List<ICacheEntry> cacheCollectionValues = new List<ICacheEntry>();
